@@ -7,11 +7,21 @@
 </head>
 <body>
 
-    <h1>Sistema Biblioteca 📚</h1>
+<header>
+    <h1>📚 Sistema Biblioteca</h1>
+</header>
 
-    <div class="form-container">
-        <h2>Agregar Usuario</h2>
+<nav>
+    <button onclick="mostrarSeccion('usuarios')">Usuarios</button>
+    <button onclick="mostrarSeccion('libros')">Libros</button>
+    <button onclick="mostrarSeccion('prestamos')">Préstamos</button>
+</nav>
 
+<!-- USUARIOS -->
+<section id="usuarios" class="seccion">
+    <h2>👤 Usuarios</h2>
+
+    <div class="form">
         <input type="text" id="nombre" placeholder="Nombre">
         <input type="text" id="rut" placeholder="RUT">
         <input type="text" id="telefono" placeholder="Teléfono">
@@ -22,15 +32,66 @@
             <option value="bibliotecario">Bibliotecario</option>
         </select>
 
-        <button onclick="agregarUsuario()">Agregar</button>
+        <button onclick="agregarUsuario()">Agregar Usuario</button>
     </div>
 
-    <div class="lista">
-        <h2>Usuarios</h2>
-        <ul id="listaUsuarios"></ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>RUT</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody id="tablaUsuarios"></tbody>
+    </table>
+</section>
+
+<!-- LIBROS -->
+<section id="libros" class="seccion oculto">
+    <h2>📖 Libros</h2>
+
+    <div class="form">
+        <input type="text" id="titulo" placeholder="Título">
+        <input type="text" id="autor" placeholder="Autor">
+        <button onclick="agregarLibro()">Agregar Libro</button>
     </div>
 
-    <script src="script.js"></script>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+            </tr>
+        </thead>
+        <tbody id="tablaLibros"></tbody>
+    </table>
+</section>
+
+<!-- PRÉSTAMOS -->
+<section id="prestamos" class="seccion oculto">
+    <h2>🔄 Préstamos</h2>
+
+    <div class="form">
+        <input type="number" id="idusuario" placeholder="ID Usuario">
+        <input type="number" id="idlibro" placeholder="ID Libro">
+        <input type="date" id="fecha">
+        <button onclick="agregarPrestamo()">Registrar Préstamo</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Usuario</th>
+                <th>ID Libro</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody id="tablaPrestamos"></tbody>
+    </table>
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
