@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Sistema Biblioteca 📚</h1>
+
+    <div class="form-container">
+        <h2>Agregar Usuario</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="rut" placeholder="RUT">
+        <input type="text" id="telefono" placeholder="Teléfono">
+        <input type="password" id="contrasena" placeholder="Contraseña">
+
+        <select id="tipo">
+            <option value="alumno">Alumno</option>
+            <option value="bibliotecario">Bibliotecario</option>
+        </select>
+
+        <button onclick="agregarUsuario()">Agregar</button>
+    </div>
+
+    <div class="lista">
+        <h2>Usuarios</h2>
+        <ul id="listaUsuarios"></ul>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
