@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Biblioteca</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
 <header>
-    <h1>📚 Sistema Biblioteca</h1>
+    <h1>Sistema Biblioteca</h1>
 </header>
 
 <nav>
@@ -19,7 +19,7 @@
 
 <!-- USUARIOS -->
 <section id="usuarios" class="seccion">
-    <h2>👤 Usuarios</h2>
+    <h2>Usuarios</h2>
 
     <div class="form">
         <input type="text" id="nombre" placeholder="Nombre">
@@ -32,7 +32,7 @@
             <option value="bibliotecario">Bibliotecario</option>
         </select>
 
-        <button onclick="agregarUsuario()">Agregar Usuario</button>
+        <button onclick="agregarUsuario()">Agregar usuario</button>
     </div>
 
     <table>
@@ -49,12 +49,12 @@
 
 <!-- LIBROS -->
 <section id="libros" class="seccion oculto">
-    <h2>📖 Libros</h2>
+    <h2>Libros</h2>
 
     <div class="form">
         <input type="text" id="titulo" placeholder="Título">
         <input type="text" id="autor" placeholder="Autor">
-        <button onclick="agregarLibro()">Agregar Libro</button>
+        <button onclick="agregarLibro()">Agregar libro</button>
     </div>
 
     <table>
@@ -70,13 +70,13 @@
 
 <!-- PRÉSTAMOS -->
 <section id="prestamos" class="seccion oculto">
-    <h2>🔄 Préstamos</h2>
+    <h2>Préstamos</h2>
 
     <div class="form">
         <input type="number" id="idusuario" placeholder="ID Usuario">
         <input type="number" id="idlibro" placeholder="ID Libro">
         <input type="date" id="fecha">
-        <button onclick="agregarPrestamo()">Registrar Préstamo</button>
+        <button onclick="agregarPrestamo()">Registrar préstamo</button>
     </div>
 
     <table>
@@ -91,7 +91,7 @@
     </table>
 </section>
 
-<script src="script.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
