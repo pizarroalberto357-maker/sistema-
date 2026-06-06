@@ -1,7 +1,7 @@
 // ===== MENU =====
 function toggleMenu()
     document.getElementById("menu").classList.toggle("active");
-}
+} 
 
 function show(id){
     document.querySelectorAll(".sec").forEach(s=>s.style.display="none");
