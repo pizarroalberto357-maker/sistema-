@@ -1,97 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Biblioteca</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Biblioteca Sistema</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-    <h1>📚 Sistema Biblioteca</h1>
+    <h2>📚 Sistema Biblioteca</h2>
+    <button onclick="toggleMenu()">☰</button>
+    <nav id="menu">
+        <a onclick="show('usuarios')">Usuarios</a>
+        <a onclick="show('libros')">Libros</a>
+        <a onclick="show('prestamos')">Préstamos</a>
+        <a onclick="show('devoluciones')">Devoluciones</a>
+        <a onclick="show('multas')">Multas</a>
+    </nav>
 </header>
 
-<nav>
-    <button onclick="mostrarSeccion('usuarios')">Usuarios</button>
-    <button onclick="mostrarSeccion('libros')">Libros</button>
-    <button onclick="mostrarSeccion('prestamos')">Préstamos</button>
-</nav>
+<div class="container">
 
-<!-- USUARIOS -->
-<section id="usuarios" class="seccion">
-    <h2>👤 Usuarios</h2>
+<!-- USUARIO -->
+<div id="usuarios" class="sec">
+<h2>Usuarios</h2>
 
-    <div class="form">
-        <input type="text" id="nombre" placeholder="Nombre">
-        <input type="text" id="rut" placeholder="RUT">
-        <input type="text" id="telefono" placeholder="Teléfono">
-        <input type="password" id="contrasena" placeholder="Contraseña">
+<input id="nombre" placeholder="Nombre">
+<input id="apellido" placeholder="Apellido">
+<input id="rut" placeholder="RUT">
+<input id="telefono" placeholder="Teléfono">
+<input id="correo" placeholder="Correo">
+<input id="password" placeholder="Password">
 
-        <select id="tipo">
-            <option value="alumno">Alumno</option>
-            <option value="bibliotecario">Bibliotecario</option>
-        </select>
+<button onclick="addUsuario()">Agregar</button>
 
-        <button onclick="agregarUsuario()">Agregar Usuario</button>
-    </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>RUT</th>
-                <th>Teléfono</th>
-            </tr>
-        </thead>
-        <tbody id="tablaUsuarios"></tbody>
-    </table>
-</section>
+<table id="tablaUsuarios"></table>
+</div>
 
 <!-- LIBROS -->
-<section id="libros" class="seccion oculto">
-    <h2>📖 Libros</h2>
+<div id="libros" class="sec" style="display:none;">
+<h2>Libros</h2>
 
-    <div class="form">
-        <input type="text" id="titulo" placeholder="Título">
-        <input type="text" id="autor" placeholder="Autor">
-        <button onclick="agregarLibro()">Agregar Libro</button>
-    </div>
+<input id="titulo" placeholder="Título">
+<input id="autor" placeholder="Autor">
+<input id="categoria" placeholder="Categoría">
+<input id="editorial" placeholder="Editorial">
+<input id="anio" placeholder="Año">
+<button onclick="addLibro()">Agregar</button>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Autor</th>
-            </tr>
-        </thead>
-        <tbody id="tablaLibros"></tbody>
-    </table>
-</section>
+<table id="tablaLibros"></table>
+</div>
 
-<!-- PRÉSTAMOS -->
-<section id="prestamos" class="seccion oculto">
-    <h2>🔄 Préstamos</h2>
+<!-- PRESTAMOS -->
+<div id="prestamos" class="sec" style="display:none;">
+<h2>Préstamos</h2>
 
-    <div class="form">
-        <input type="number" id="idusuario" placeholder="ID Usuario">
-        <input type="number" id="idlibro" placeholder="ID Libro">
-        <input type="date" id="fecha">
-        <button onclick="agregarPrestamo()">Registrar Préstamo</button>
-    </div>
+<input id="p_usuario" placeholder="ID Usuario">
+<input id="p_libro" placeholder="ID Libro">
+<button onclick="addPrestamo()">Crear</button>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID Usuario</th>
-                <th>ID Libro</th>
-                <th>Fecha</th>
-            </tr>
-        </thead>
-        <tbody id="tablaPrestamos"></tbody>
-    </table>
-</section>
+<ul id="listaPrestamos"></ul>
+</div>
+
+<!-- DEVOLUCIONES -->
+<div id="devoluciones" class="sec" style="display:none;">
+<h2>Devoluciones</h2>
+
+<input id="d_condicion" placeholder="Condición">
+<button onclick="addDevolucion()">Registrar</button>
+
+<ul id="listaDevoluciones"></ul>
+</div>
+
+<!-- MULTAS -->
+<div id="multas" class="sec" style="display:none;">
+<h2>Multas</h2>
+
+<input id="m_monto" placeholder="Monto">
+<input id="m_dias" placeholder="Días atraso">
+<button onclick="addMulta()">Agregar</button>
+
+<ul id="listaMultas"></ul>
+</div>
+
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
