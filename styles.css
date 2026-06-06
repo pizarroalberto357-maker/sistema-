@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-/* HEADER */
+/* HEADER */ 
 header {
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(10px);
